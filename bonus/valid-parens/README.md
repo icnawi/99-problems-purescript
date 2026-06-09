@@ -14,28 +14,28 @@ Every close bracket has a corresponding open bracket of the same type.
 
 #### Example 1:
 
-_Input:_ `s = "()"` \
-_Output:_ `true`
+**Input:** `s = "()"` \
+**Output:** `true`
 
 #### Example 2:
 
-_Input:_ `s = "()[]{}"` \
-_Output:_ `true`
+**Input:** `s = "()[]{}"` \
+**Output:** `true`
 
 #### Example 3:
 
-_Input:_ `s = "(]"` \
-_Output:_ `false`
+**Input:** `s = "(]"` \
+**Output:** `false`
 
 #### Example 4:
 
-_Input:_ `s = "([])"` \
-_Output:_ `true`
+**Input:** `s = "([])"` \
+**Output:** `true`
 
 #### Example 5:
 
-_Input:_ `s = "([)]"` \
-_Output:_ `false`
+**Input:** `s = "([)]"` \
+**Output:** `false`
 
 #### Constraints:
 
