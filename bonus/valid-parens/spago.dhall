@@ -1,4 +1,4 @@
-{ name = "my-project"
+{ name = "valid-parentheses"
 , dependencies =
   [ "console"
   , "effect"
