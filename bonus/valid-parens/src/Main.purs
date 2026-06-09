@@ -8,8 +8,4 @@ import Parens (isValidParens)
 
 main :: Effect Unit
 main = do
-  log $ show $ isValidParens "(){}[]<>"
   log $ show $ isValidParens "([])"
-  log $ show $ isValidParens "(]"
-  log $ show $ isValidParens "()"
-  log $ show $ isValidParens "([)]"

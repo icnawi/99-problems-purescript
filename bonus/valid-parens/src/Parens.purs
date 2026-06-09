@@ -1,29 +1,25 @@
 module Parens
   ( isValidParens
-  , strToListChar
   )
   where
 
 import Prelude
 
 import Data.Foldable (lookup)
-import Data.List (List(..), fromFoldable, null, (:))
+import Data.List (List(..), null, (:))
 import Data.Maybe (Maybe(..))
-import Data.String.CodeUnits (toCharArray)
-import Data.Tuple (Tuple(..))
+import Data.Tuple.Nested ((/\))
+import Utils (stringToCharList)
 
 
 isValidParens :: String -> Boolean
-isValidParens xs = isBalanced (strToListChar xs) Nil
-
-strToListChar ∷ String →  List Char
-strToListChar xs = fromFoldable $ toCharArray xs
+isValidParens xs = isBalanced (stringToCharList xs) Nil
 
 isBalanced :: List Char -> List Char -> Boolean
 isBalanced Nil x = null x
 
 isBalanced (c:xs) ys 
-  | Just d <- lookup c [ Tuple '(' ')', Tuple '[' ']', Tuple '{' '}', Tuple '<' '>' ] = isBalanced xs (d:ys)
+  | Just d <- lookup c [ '(' /\ ')', '[' /\ ']', '{' /\ '}', '<' /\ '>' ] = isBalanced xs (d:ys)
 
 isBalanced _ Nil = false
 isBalanced (x:xs) (y:ys) = x == y && isBalanced xs ys
