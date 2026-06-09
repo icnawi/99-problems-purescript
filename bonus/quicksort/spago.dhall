@@ -1,4 +1,4 @@
-{ name = "my-project"
+{ name = "quicksort-integers"
 , dependencies =
   [
   , "console"
