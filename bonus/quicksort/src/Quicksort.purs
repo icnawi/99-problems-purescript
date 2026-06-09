@@ -4,7 +4,6 @@ import Prelude
 
 import Data.List (List(..), (:), partition)
 
-
 quicksort :: forall a. Ord a => List a -> List a
 quicksort Nil = Nil
 quicksort (x:xs) 
