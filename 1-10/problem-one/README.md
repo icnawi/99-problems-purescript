@@ -2,7 +2,7 @@
 
 ### Description
 
-Find the last element of the list
+Find the last element of the Array/Linked List
 
 ### Example: Arrays
 
