@@ -5,7 +5,7 @@
 ### P1
 
 **Description:** Find the last element of the array/linked list \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 myLast [1,2,3,4] == 4
@@ -15,7 +15,7 @@ myLast ['x','y','z'] == 'z'
 ### P2
 
 **Description:** Find the last-but-one (or second-last) element of a array/list. \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 myButLast [1,2,3,4] == 3
@@ -25,7 +25,7 @@ myLast ['a'..'z'] == 'y'
 ### P3
 
 **Description:** Find the K-th element of a array/list. \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 elementAt ('a':'b':'c':'d':'e':Nil) == c -- Considering the fst elem as 1
@@ -34,7 +34,7 @@ elementAt ('a':'b':'c':'d':'e':Nil) == c -- Considering the fst elem as 1
 ### P4
 
 **Description:** Find the number of elements in an array/list/string/chars. \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 myLength [123, 456, 789] == 3
@@ -44,7 +44,7 @@ myLength "Hello, world!" == 13
 ### P5
 
 **Description:** Reverse an array/list. \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 myReverse "A man, a plan, a canal, panama!" == "!amanap ,lanac a ,nalp a ,nam A"
@@ -55,7 +55,7 @@ myReverse ('a':'b':'c':'d':'e':Nil) == ('e','d','c','b','a':Nil)
 ### P6
 
 **Description:** Find out whether an array/list is a palindrome. \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 isPalindrome [1,2,3]              == false
@@ -67,7 +67,7 @@ isPalindrome [1,2,4,8,16,8,4,2,1] == true
 
 **Description:** Flatten a nested array/list structure. \
 _**Note:** Transform a list, possibly holding lists as elements into a `flat` list by replacing each list with its elements (recursively)._ \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 myFlatten (1:(2:(3:4):5:Nil)) == (1:2:3:4:5:Nil)
@@ -77,7 +77,7 @@ myFlatten (1:(2:(3:4):5:Nil)) == (1:2:3:4:5:Nil)
 
 **Description:** Eliminate consecutive duplicates of array/list elements. \
 _**Note:** If a list contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed._ \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 myCompress 1 [1,1,1,2,3,3,1,1,4,5,5,5,5] == [1, 2, 3, 1, 4, 5]
@@ -87,7 +87,7 @@ myCompress 1 [1,1,1,2,3,3,1,1,4,5,5,5,5] == [1, 2, 3, 1, 4, 5]
 
 **Description:** Pack consecutive duplicates of array/list elements into sublists. \
 _**Note:** If a list contains repeated elements they should be placed in separate sublists/strings._ \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 myPack ['a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e'] == [['a','a','a','a'],['b'],['c','c'],['a','a'],['d'],['e','e','e','e']]
@@ -99,7 +99,7 @@ myPack ['a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e'] ==
 
 **Description:** Run-length encoding of an array/list. \
 _**Note:** Use the result of Problem 9 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as lists (N E) where N is the number of duplicates of the element E._ \
-**_Example:_** \
+**_Example:_**
 
 ```purescript
 myEncode "aaaabccaadeeee" = [4/\'a', 1/\'b', 2/\'c', 2/\'a', 1/\'d', 4/\'e']
