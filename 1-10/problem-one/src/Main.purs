@@ -2,7 +2,6 @@ module Main
   ( main
   , myLast
   , myLast'
-  , myLast''
   , myLast'''
   )
   where
@@ -35,4 +34,4 @@ myLast'' ∷ ∀ a. Partial => Array a →  a
 myLast'' = head <<< reverse
 
 myLast''' ∷ ∀ a. Array a -> Maybe a
-myLast''' xs = xs !! (length xs -1)
+myLast''' xs = xs !! (length xs - 1)

@@ -19,7 +19,7 @@ myLast ['x','y','z'] == 'z'
 
 ```purescript
 myButLast [1,2,3,4] == 3
-myLast ['a'..'z'] == 'y'
+myButLast ['a','q','z'] == 'q'
 ```
 
 ### P3
