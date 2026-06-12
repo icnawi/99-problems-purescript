@@ -28,7 +28,7 @@ myButLast ['a','q','z'] == 'q'
 **_Example:_**
 
 ```purescript
-elementAt ('a':'b':'c':'d':'e':Nil) == c -- Considering the fst elem as 1
+elementAt ('a':'b':'c':'d':'e':Nil) 3 == c -- Considering the 1st elem as 1
 ```
 
 ### P4
