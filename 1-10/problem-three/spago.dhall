@@ -1,4 +1,4 @@
-{ name = "my-project"
+{ name = "problem-3"
 , dependencies =
   [ "arrays"
   , "console"
