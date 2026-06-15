@@ -13,16 +13,16 @@ main :: Effect Unit
 main = runTest do
   suite "Custom length function - Recursion 1" do
     test "Simple recursion => List Int" do
-      Assert.assert "(33:453:905:75352:1223115:5362:Nil)" $ myLength (33:453:905:75352:1223115:5362:Nil) == 6
+      Assert.assert "(33:453:905:75352:1223115:5362:Nil) should have length 6" $ myLength (33:453:905:75352:1223115:5362:Nil) == 6
     test "Simple recursion => List Char" do
-      Assert.assert "('H':'a':'s':'k':'e':'l':'l':Nil)" $ myLength ('H':'a':'s':'k':'e':'l':'l':Nil) == 7
+      Assert.assert "('H':'a':'s':'k':'e':'l':'l':Nil) should have length 7" $ myLength ('H':'a':'s':'k':'e':'l':'l':Nil) == 7
     test "Simple recursion => List Char 1" do
-      Assert.assert "('x':Nil)" $ myLength ('x':Nil) == 1
+      Assert.assert "('x':Nil) should have length 1" $ myLength ('x':Nil) == 1
     test "Simple recursion => List Nil" do
-      Assert.assert "Empty List" $ myLength Nil == 0
+      Assert.assert "Empty List should have length 0" $ myLength Nil == 0
 
     test "Simple recursion => Array Int" do
-      Assert.assert "[33,453,905,75352,1223115,5362]" $ myLength' [33,453,905,75352,1223115,5362] == 6
+      Assert.assert "[33,453,905,75352,1223115,5362] should have kength 6" $ myLength' [33,453,905,75352,1223115,5362] == 6
     test "Simple recursion => Array String" do
       Assert.assert "[\"apple\", \"banana\", \"cherry\"] should have length 3" $ myLength' ["apple", "banana", "cherry"] == 3
     test "Simple recursion => Array String single" do

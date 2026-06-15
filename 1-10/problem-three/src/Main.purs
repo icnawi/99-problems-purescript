@@ -28,17 +28,17 @@ main = do
   logShow $ elementAt'''' "Haskell" (3)
 
 
-elementAt ∷ ∀ a. List a -> Int -> Maybe a
+elementAt :: ∀ a. List a -> Int -> Maybe a
 elementAt xs x = xs !! (x - 1)
 
-elementAt' ∷ ∀ a. List a -> Int -> a
+elementAt' :: ∀ a. List a -> Int -> a
 elementAt' (x:_) 1   = x
 elementAt' Nil _     = unsafeCrashWith "Index out of bounds"
 elementAt' (_:xs) k 
   | k < 1            = unsafeCrashWith "Index out of bounds"
   | otherwise        = elementAt' xs (k - 1)
 
-elementAt'' ∷ String -> Int -> Maybe Char
+elementAt'' :: String -> Int -> Maybe Char
 elementAt'' "" _ = unsafeCrashWith "Index out of bounds"
 elementAt'' xs x = charAt (x - 1) xs
 

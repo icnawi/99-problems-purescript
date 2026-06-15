@@ -16,22 +16,22 @@ import Effect (Effect)
 import Effect.Class.Console (logShow)
 import Partial.Unsafe (unsafeCrashWith, unsafePartial)
 
-main ∷ Effect Unit
+main :: Effect Unit
 main = do 
   logShow $ unsafePartial $ myLast''' [12,34,52]
 
-myLast ∷ ∀ a. Partial => Array a -> a
+myLast :: ∀ a. Partial => Array a -> a
 myLast [] = unsafeCrashWith "No end for empty arrays!"
 myLast [x] = x
 myLast xs = myLast (tail xs)
 
-myLast' ∷ ∀ a. Partial => List a -> a
+myLast' :: ∀ a. Partial => List a -> a
 myLast' Nil = unsafeCrashWith "No end for empty lists!"
 myLast' (x : Nil) = x
 myLast' (_:xs) = myLast' xs
 
-myLast'' ∷ ∀ a. Partial => Array a →  a
+myLast'' :: ∀ a. Partial => Array a →  a
 myLast'' = head <<< reverse
 
-myLast''' ∷ ∀ a. Array a -> Maybe a
+myLast''' :: ∀ a. Array a -> Maybe a
 myLast''' xs = xs !! (length xs - 1)
