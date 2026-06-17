@@ -1,5 +1,6 @@
 module Main
-  ( myReverse
+  ( main
+  , myReverse
   , myReverse'
   , myReverse''
   , myReverse'''

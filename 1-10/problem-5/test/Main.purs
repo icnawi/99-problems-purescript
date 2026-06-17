@@ -18,7 +18,7 @@ main = runTest do
     test "`foldl` version 1 => Array Int" do
       Assert.assert "[252,838,342,425] should equal [425,342,838,252]" $ myReverse' [252,838,342,425] == [425,342,838,252]
     test "`foldl` version 2 => Array Int" do
-      Assert.assert "[252,838,342,425] should equal [425,342,838,252]" $ myReverse'' [99,11,33,66] == [66,33,11,99]
+      Assert.assert "[99,11,33,66] should equal [66,33,11,99]" $ myReverse'' [99,11,33,66] == [66,33,11,99]
     test "`foldl` version => String" do
       Assert.assert "\"A man, a plan, a canal, panama!\" should equal \"!amanap ,lanac a ,nalp a ,nam A\"" $ myReverse''' "A man, a plan, a canal, panama!" == "!amanap ,lanac a ,nalp a ,nam A"
 
