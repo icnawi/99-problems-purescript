@@ -34,7 +34,7 @@ isPalindrome xs = revList xs == xs
 
 -- Variant 2: `head` + `last` comparison within recursive destructuring of palindromic List
 isPalindrome'' :: ∀ a. Eq a => List a -> Boolean
-isPalindrome'' Nil = false
+isPalindrome'' Nil = true
 isPalindrome'' (_:Nil) = true
 isPalindrome'' xs = (head xs) == (last xs) && (isPalindrome'' $ fromMaybe Nil <<< init $ fromMaybe Nil <<< tail $ xs)
 
@@ -54,6 +54,6 @@ isPalindrome''''' = reverse >>= (==)
 isPalindrome'''''' :: String -> Boolean
 isPalindrome'''''' = isPalindrome''''' <<< toCharArray 
 
--- Variant 7: Profunctor.Strong implementation using fan-out (&&&) operator
+-- Variant 7: Profunctor.Strong implementation with monomorphism restriction
 isPalindrome''''''' :: ∀ a. Eq a => Array a -> Boolean
 isPalindrome''''''' xs = (uncurry (==) <<< (identity &&& reverse)) xs

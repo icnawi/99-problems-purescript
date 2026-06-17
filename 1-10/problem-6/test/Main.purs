@@ -27,6 +27,10 @@ main = runTest do
       Assert.assert "(1:2:4:8:16:8:4:2:1:Nil) should be true" $ isPalindrome'' (1:2:4:8:16:8:4:2:1:Nil) == true
     test "`head` + `last` + recusion - non-palindromic" do
       Assert.assert "" $ isPalindrome'' ('h':'a':'s':'k':'e':'l':'l':Nil) == false 
+    test "`head` + `last` + recusion - single list item" do
+      Assert.assert "" $ isPalindrome'' ('a':Nil) == true
+    -- test "`head` + `last` + recusion - empty List" do
+    --   Assert.assert "" $ isPalindrome'' Nil == true 
 
   suite "Strings: Monadic" do
     test "Monad: map String to [Char]" do
