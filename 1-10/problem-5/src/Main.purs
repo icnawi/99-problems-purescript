@@ -2,7 +2,6 @@ module Main
   ( main
   , myReverse
   , myReverse'
-  , myReverse''
   , myReverse'''
   )
   where

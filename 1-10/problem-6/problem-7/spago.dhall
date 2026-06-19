@@ -1,15 +1,16 @@
-{ name = "problem-6"
+{ name = "problem-7"
 , dependencies =
   [ "arrays"
   , "console"
   , "effect"
+  , "exists"
+  , "foldable-traversable"
   , "lists"
   , "maybe"
+  , "partial"
   , "prelude"
-  , "profunctor"
   , "strings"
   , "test-unit"
-  , "tuples"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]
