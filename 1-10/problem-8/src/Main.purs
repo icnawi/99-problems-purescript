@@ -26,10 +26,8 @@ myCompress' :: ∀ a. (Eq a) => List a -> List a
 myCompress' Nil = Nil
 myCompress' (x:xs) = x : (myCompress' $ dropWhile (_ == x) xs)
 
--- myCompress'' :: ∀ a. (Eq a) => Array a -> NonEmptyArray a
 myCompress'' :: ∀ a. Eq a => Array a -> Array a
 myCompress'' = map NonEmptyArray.head <<< group
-
 
 myCompress''' :: Eq String => String -> String
 myCompress''' = fromCharArray <<< (map NonEmptyArray.head  <<< group) <<< toCharArray
