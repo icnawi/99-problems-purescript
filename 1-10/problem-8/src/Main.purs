@@ -9,11 +9,9 @@ import Data.List (List(..), dropWhile, (:))
 import Data.String.CodeUnits (fromCharArray, toCharArray)
 import Effect (Effect)
 import Effect.Console (logShow)
-import Partial.Unsafe (unsafePartial)
 
 main :: Effect Unit
 main = do
-  logShow $ unsafePartial $ myCompress ['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
   logShow $ myCompress' ('a':'a':'a':'a':'b':'c':'c':'a':'a':'d':'e':'e':'e':'e':Nil)
   logShow $ myCompress'' ['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
   logShow $ myCompress''' "aaaabccaadeeee"
