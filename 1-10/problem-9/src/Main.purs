@@ -29,17 +29,19 @@ main = do
 myPack :: ∀ a. Eq a => List a -> List (List a)
 myPack Nil = Nil
 myPack (x:Nil) = (x:Nil) : Nil
-myPack (x LS.: xs) = let { init, rest } = LS.span (_ == x) xs
-                     in (x LS.: init) : myPack rest
+myPack (x LS.: xs) = 
+    let { init, rest } = LS.span (_ == x) xs
+    in (x LS.: init) : myPack rest
 
 
 myPack' :: ∀ a. Eq a => Array a -> Array (Array a)
 myPack' [] = []
 myPack' [x] = [[x]]
 myPack' arr = case AR.uncons arr of
-  Just { head: x, tail: xs } -> let { init, rest } = AR.span (_ == x) xs 
-                                in (x AR.: init) AR.: myPack' rest
-  Nothing -> []
+    Just { head: x, tail: xs } -> 
+      let { init, rest } = AR.span (_ == x) xs 
+      in (x AR.: init) AR.: myPack' rest
+    Nothing -> []
 
 
 myPack'' :: String -> Array String
@@ -51,10 +53,17 @@ myPack''' :: ∀ a. Eq a => List a -> List (List a)
 myPack''' Nil = Nil
 myPack''' (x:xs) = (x:reps) : (myPack''' rest)
     where
-        { before: reps, after: rest } = maybe { before: xs, after: Nil } (\i -> splitAtLs i xs) (LS.findIndex (_ /= x) xs)
+        { before: reps
+        , after: rest 
+        } = maybe 
+            { before: xs
+            , after: Nil 
+            } (\i -> splitAtLs i xs) 
+                (LS.findIndex (_ /= x) xs)
 
 myPack'''' :: ∀ a. Eq a => Array a -> Array (Array a)
 myPack'''' [] = []
 myPack'''' arr = case AR.uncons arr of
-  Just {head: x, tail: xs} -> (x AR.: AR.takeWhile (_ == x) xs) AR.: myPack'''' (AR.dropWhile (_ == x) xs)
-  Nothing -> []
+    Just { head: x, tail: xs } -> 
+        (x AR.: AR.takeWhile (_ == x) xs) AR.: myPack'''' (AR.dropWhile (_ == x) xs)
+    Nothing -> []
