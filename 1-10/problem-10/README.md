@@ -2,14 +2,14 @@
 
 ### Description
 
-Pack consecutive duplicates of Array/List/String elements into subarrays/sublists/string.
+Run-length encoding of an Array/List/String
 
-**_Note:_** If a array/list/string contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
+**_Note:_** Use the result of Problem 9 to implement the so-called run-length encoding data compression method. Consecutive duplicates of elements are encoded as tuples (N E) where N is the number of duplicates of the element E.
 
 ### Solution Example
 
 ```purescript
-> myPack [1,1,1,2,3,3,1,1,4,5,5,5,5] == [[1,1,1], [2], [3], [1], [4], [5]]
-> myPack ['a','a','a','a','b','c','c','a','a','d','e','e','e','e'] == [['a','a','a','a'], ['b'], ['c', 'c'], ['a', 'a'], ['d'], ['e','e','e','e']]
-> myPack "aaaabccaadeeee" == ["aaaa", "b", "cc", "aa", "d", "eeee"]
+> myEncode [1,1,1,2,3,3,1,1,4,5,5,5,5] == [3 /\ 1, 1 /\ 2, 2 /\ 3, 2 /\ 1, 1 /\ 4, 4 /\ 5]
+> myEncode ['a','a','a','a','b','c','c','a','a','d','e','e','e','e'] == [4 /\ 'a', 1 /\ 'b', 2 /\ 'c', 2 /\ 'a', 1 /\ 'd', 4 /\ 'e']
+> myEncode "aaaabccaadeeee" == [4 /\ 'a', 1 /\ 'b', 2 /\ 'c', 2 /\ 'a', 1 /\ 'd', 4 /\ 'e']
 ```
