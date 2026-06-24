@@ -37,13 +37,13 @@ main = runTest do
           : ('e' : 'e' : 'e' : 'e' : Nil) 
           : Nil
   
-  -- Test 3: List Char, testing with single item in the List
+  -- Test 3: List Int, testing with single item in the List
     test "`span` + recursion: List Int - 3" do
       Assert.assert 
         "(6 : Nil) should equal ((6 : Nil) : Nil)" $ 
           myPack (6 : Nil) == (6 : Nil) : Nil
 
-  -- Test 4: List Char, testing with empty List
+  -- Test 4: List Int, testing with empty List
     test "`span` + recursion: List Int - 4" do
       Assert.assert "Nil should equal Nil" $ myPack (Nil :: List Int) == Nil
 
@@ -75,22 +75,29 @@ main = runTest do
             , ['e','e','e','e']
           ]
     
-    -- Test 3: List Char, testing with single item in the List
+    -- Test 3: Array Int, testing with single item in the Array
     test "`span` + recursion: Array Int - 3" do
       Assert.assert 
         "[6] should equal [[6]]" $ 
           myPack' [6] == [[6]]
 
-    -- Test 4: List Char, testing with empty List
+    -- Test 4: Array Int, testing with empty Array
     test "`span` + recursion: Array Int - 4" do
       Assert.assert "Nil should equal Nil" $ myPack' ([] :: Array Int) == []
 
   suite "`myPack` function on: Array" do
+    -- Test 1: String with repeating chars
     test "`map` + `span` + recursion: String - 1" do
       Assert.assert "\"aaaabccaadeeee\" should equal [\"aaaa\", \"b\", \"cc\", \"aa\", \"d\", \"eeee\"]" $ myPack'' "aaaabccaadeeee" == ["aaaa", "b", "cc", "aa", "d", "eeee"]
+    
+    -- Test 2: String with NO repeating chars
     test "`map` + `span` + recursion: String - 2" do
       Assert.assert "\"PureScript\" should equal [\"P\",\"u\",\"r\",\"e\",\"S\",\"c\",\"r\",\"i\",\"p\",\"t\"]" $ myPack'' "PureScript" == ["P","u","r","e","S","c","r","i","p","t"]
+    
+    -- Test 3: String with single char
     test "`map` + `span` + recursion: String - 3" do
       Assert.assert "\"X\" should equal [\"X\"]" $ myPack'' "X" == ["X"]
+
+    -- Test 4: Empty String
     test "`map` + `span` + recursion: String - 4" do
       Assert.assert "\"\" should equal []" $ myPack'' "" == []
