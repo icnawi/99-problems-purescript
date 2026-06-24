@@ -67,3 +67,4 @@ myPack'''' arr = case AR.uncons arr of
     Just { head: x, tail: xs } -> 
         (x AR.: AR.takeWhile (_ == x) xs) AR.: myPack'''' (AR.dropWhile (_ == x) xs)
     Nothing -> []
+    
